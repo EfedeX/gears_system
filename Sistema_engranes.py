@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.animation import FuncAnimation
+from manim import *
 
 class Gear:
     def __init__(self, teeth, is_axle_connection=False, gear_type='spur', radius=1):
@@ -48,6 +49,9 @@ class GearTrain():
 
     def set_rpm(self, initial_rpm):
         self.initial_rpm = initial_rpm
+
+    def view_gear_rotation(self):
+        pass
 
     def visualize_rotation(self, num_frames=100):
         gear_ratio = self.calculate_gear_ratio()
@@ -126,7 +130,7 @@ class GearTrain():
 
 if __name__ == '__main__':
     driver_gear = Gear(10)
-    middle_gear = Gear(30)
+    middle_gear = Gear(20)
     driven_gear = Gear(30)
 
     gear_train = GearTrain()
@@ -135,4 +139,4 @@ if __name__ == '__main__':
     gear_train.set_rpm(5)
     print(gear_train.calculate_gear_ratio())
 
-    gear_train.visualize_rotation()
+    # gear_train.visualize_rotation()
